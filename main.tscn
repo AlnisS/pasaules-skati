@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://materials/earth.material" type="Material" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+material = ExtResource( 1 )
+radius = 4.0
+height = 8.0
+radial_segments = 720
+rings = 360
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 0.407843, 0.486275, 1, 0.45098 )
+
+[sub_resource type="SphereMesh" id=3]
+material = SubResource( 2 )
+radius = 3.99
+height = 7.98
+radial_segments = 720
+rings = 360
+
+[node name="Main" type="Spatial"]
+
+[node name="Earth" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Ocean" type="MeshInstance" parent="."]
+mesh = SubResource( 3 )
+material/0 = null
