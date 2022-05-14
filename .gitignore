@@ -1,0 +1,14 @@
+# Import cache
+.import/
+
+# Recommended excludes: https://docs.godotengine.org/en/stable/tutorials/best_practices/version_control_systems.html
+*.translation
+export_presets.cfg
+.mono/
+
+# Binaries
+bin/
+build/
+lib/
+
+android/
