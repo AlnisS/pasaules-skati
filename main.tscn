@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://materials/earth.material" type="Material" id=1]
+[ext_resource path="res://main.gd" type="Script" id=2]
+[ext_resource path="res://camera_space_env.tres" type="Environment" id=3]
 
 [sub_resource type="SphereMesh" id=1]
 material = ExtResource( 1 )
@@ -21,11 +23,28 @@ radial_segments = 720
 rings = 360
 
 [node name="Main" type="Spatial"]
+script = ExtResource( 2 )
 
-[node name="Earth" type="MeshInstance" parent="."]
+[node name="CameraBase" type="Spatial" parent="."]
+transform = Transform( 0.422618, -0.309976, 0.851651, 0, 0.939693, 0.34202, -0.906308, -0.144544, 0.397131, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="CameraBase"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
+environment = ExtResource( 3 )
+fov = 32.0
+
+[node name="Axis" type="Spatial" parent="."]
+
+[node name="Earth" type="MeshInstance" parent="Axis"]
 mesh = SubResource( 1 )
+skeleton = NodePath("../..")
 material/0 = null
 
-[node name="Ocean" type="MeshInstance" parent="."]
+[node name="Ocean" type="MeshInstance" parent="Axis"]
 mesh = SubResource( 3 )
+skeleton = NodePath("../..")
 material/0 = null
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14 )
+shadow_enabled = true

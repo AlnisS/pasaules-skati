@@ -2,3 +2,4 @@ Data Sources:
 Bathymetry - https://visibleearth.nasa.gov/images/73963/bathymetry
 Topography - https://visibleearth.nasa.gov/images/73934/topography
 Colors - https://visibleearth.nasa.gov/images/73909/december-blue-marble-next-generation-w-topography-and-bathymetry/73911l
+Lights - https://visibleearth.nasa.gov/images/55167/earths-city-lights
