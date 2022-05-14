@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/gebco_08_rev_elev_3600x1800.png-aa68330c9c6323a4cd609a218741065c.s3tc.stex"
-path.etc2="res://.import/gebco_08_rev_elev_3600x1800.png-aa68330c9c6323a4cd609a218741065c.etc2.stex"
+path.s3tc="res://.import/world.topo.bathy.200412.3x5400x2700.jpg-6a2e47ddc95fa3964e073f071c1b5162.s3tc.stex"
+path.etc2="res://.import/world.topo.bathy.200412.3x5400x2700.jpg-6a2e47ddc95fa3964e073f071c1b5162.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://data/gebco_08_rev_elev_3600x1800.png"
-dest_files=[ "res://.import/gebco_08_rev_elev_3600x1800.png-aa68330c9c6323a4cd609a218741065c.s3tc.stex", "res://.import/gebco_08_rev_elev_3600x1800.png-aa68330c9c6323a4cd609a218741065c.etc2.stex" ]
+source_file="res://data/world.topo.bathy.200412.3x5400x2700.jpg"
+dest_files=[ "res://.import/world.topo.bathy.200412.3x5400x2700.jpg-6a2e47ddc95fa3964e073f071c1b5162.s3tc.stex", "res://.import/world.topo.bathy.200412.3x5400x2700.jpg-6a2e47ddc95fa3964e073f071c1b5162.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
