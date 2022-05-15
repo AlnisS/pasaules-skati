@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://materials/earth.material" type="Material" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://data/deep-circulation-path.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://fonts/TitilliumWeb-SemiBold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://data/font_label.tres" type="DynamicFont" id=7]
+[ext_resource path="res://data/font_credits.tres" type="DynamicFont" id=8]
 
 [sub_resource type="SphereMesh" id=1]
 material = ExtResource( 1 )
@@ -29,6 +30,19 @@ rings = 360
 [sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.211765, 0.211765, 0.211765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.392157, 0.392157, 0.392157, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 2 )
@@ -88,6 +102,10 @@ text = "Spinning Globe"
 margin_left = 133.0
 margin_right = 209.0
 margin_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+pressed = true
+enabled_focus_mode = 0
 
 [node name="FullVisibility" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 44.0
@@ -105,6 +123,9 @@ text = "Full Visibility"
 margin_left = 114.0
 margin_right = 190.0
 margin_bottom = 40.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -115,3 +136,105 @@ margin_right = 156.5
 margin_bottom = 56.0
 custom_fonts/font = SubResource( 4 )
 text = "Deep Ocean Circulation"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -76.0
+margin_right = 149.0
+margin_bottom = -10.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+margin_right = 139.0
+margin_bottom = 31.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer2/HBoxContainer"]
+margin_right = 30.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 30, 30 )
+color = Color( 0.0627451, 0.545098, 0.67451, 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer"]
+margin_left = 34.0
+margin_right = 125.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 7 )
+text = "Cold water"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
+margin_top = 35.0
+margin_right = 139.0
+margin_bottom = 66.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer2/HBoxContainer2"]
+margin_right = 30.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 30, 30 )
+color = Color( 0.890196, 0.458824, 0.14902, 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer2"]
+margin_left = 34.0
+margin_right = 139.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 7 )
+text = "Warm water"
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -574.0
+margin_top = -65.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_fonts/font = ExtResource( 8 )
+text = "Data from NASA and National Geographic.
+Created by Alnis Smidchens for the UW EverybodyHacks Spring 2022 Hackathon."
+align = 2
+valign = 2
+
+[node name="HelpButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -60.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 50, 50 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+enabled_focus_mode = 0
+text = "?"
+
+[node name="PopupPanel" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -162.5
+margin_top = -88.5
+margin_right = 162.5
+margin_bottom = 88.5
+window_title = "Help"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+bbcode_enabled = true
+bbcode_text = "This is a visualization of deep water circulation on Earth.
+
+Click and drag to rotate the view."
+text = "This is a visualization of deep water circulation on Earth.
+
+Click and drag to rotate the view."

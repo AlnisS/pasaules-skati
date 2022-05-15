@@ -68,10 +68,10 @@ operator = 2
 
 [sub_resource type="VisualShaderNodeExpression" id=27]
 size = Vector2( 638, 330 )
-expression = "output0 = mod(UV.x + TIME * -0.04, 0.05) * 20.0;
+expression = "output0 = mod(UV.x + TIME * -0.03, 0.05) * 20.0;
 output0 -= 0.5;
 output0 *= 2.0;
-output0 = pow(output0, 2.0) * 4.0;
+output0 = pow(output0, 6.0) * 4.0;
 output0 += 1.0;"
 
 [sub_resource type="VisualShaderNodeVectorOp" id=28]
@@ -166,10 +166,10 @@ void vertex() {
 	float n_out33p0;
 	n_out33p0 = 0.0;
 	{
-		n_out33p0 = mod(UV.x + TIME * -0.04, 0.05) * 20.0;
+		n_out33p0 = mod(UV.x + TIME * -0.03, 0.05) * 20.0;
 		n_out33p0 -= 0.5;
 		n_out33p0 *= 2.0;
-		n_out33p0 = pow(n_out33p0, 2.0) * 4.0;
+		n_out33p0 = pow(n_out33p0, 6.0) * 4.0;
 		n_out33p0 += 1.0;
 	}
 
@@ -224,7 +224,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -447.987, 31.7284 )
+graph_offset = Vector2( 327.999, -247.154 )
 nodes/vertex/0/position = Vector2( 1440, -160 )
 nodes/vertex/2/node = SubResource( 3 )
 nodes/vertex/2/position = Vector2( -240, 120 )
@@ -295,10 +295,10 @@ nodes/vertex/33/position = Vector2( 620, -200 )
 nodes/vertex/33/size = Vector2( 638, 330 )
 nodes/vertex/33/input_ports = ""
 nodes/vertex/33/output_ports = "0,0,output0;"
-nodes/vertex/33/expression = "output0 = mod(UV.x + TIME * -0.04, 0.05) * 20.0;
+nodes/vertex/33/expression = "output0 = mod(UV.x + TIME * -0.03, 0.05) * 20.0;
 output0 -= 0.5;
 output0 *= 2.0;
-output0 = pow(output0, 2.0) * 4.0;
+output0 = pow(output0, 6.0) * 4.0;
 output0 += 1.0;"
 nodes/vertex/34/node = SubResource( 28 )
 nodes/vertex/34/position = Vector2( 1260.15, -57.8558 )
