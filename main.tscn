@@ -36,6 +36,7 @@ environment = ExtResource( 3 )
 fov = 32.0
 
 [node name="Earth" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.91706, -0.398749, 0, 0.398749, 0.91706, 0, 0, 0 )
 
 [node name="Ground" type="MeshInstance" parent="Earth"]
 mesh = SubResource( 1 )

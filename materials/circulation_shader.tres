@@ -1,10 +1,7 @@
-[gd_resource type="VisualShader" load_steps=28 format=2]
+[gd_resource type="VisualShader" load_steps=27 format=2]
 
 [sub_resource type="VisualShaderNodeInput" id=1]
 input_name = "color"
-
-[sub_resource type="VisualShaderNodeColorConstant" id=2]
-constant = Color( 0, 0, 0, 1 )
 
 [sub_resource type="VisualShaderNodeVectorOp" id=5]
 operator = 2
@@ -21,7 +18,7 @@ input_name = "vertex"
 
 [sub_resource type="VisualShaderNodeGlobalExpression" id=15]
 size = Vector2( 250, 150 )
-expression = "render_mode cull_disabled;"
+expression = "render_mode cull_disabled, unshaded;"
 
 [sub_resource type="VisualShaderNodeInput" id=3]
 input_name = "vertex"
@@ -70,13 +67,12 @@ default_input_values = [ 0, 0.0, 1, 0.3 ]
 operator = 2
 
 [sub_resource type="VisualShaderNodeExpression" id=27]
-size = Vector2( 434, 277 )
-expression = "output0 = 1.0;
-
-if (mod(UV.x + TIME * -0.02, 0.2) < 0.02) {
-	output0 = 2.0;
-}
-"
+size = Vector2( 638, 330 )
+expression = "output0 = mod(UV.x + TIME * -0.02, 0.05) * 20.0;
+output0 -= 0.5;
+output0 *= 2.0;
+output0 = pow(output0, 2.0) * 2.0;
+output0 += 1.0;"
 
 [sub_resource type="VisualShaderNodeVectorOp" id=28]
 operator = 2
@@ -99,7 +95,7 @@ render_mode specular_schlick_ggx;
 
 
 // GlobalExpression:0
-	render_mode cull_disabled;
+	render_mode cull_disabled, unshaded;
 
 void vertex() {
 // Input:12
@@ -170,12 +166,11 @@ void vertex() {
 	float n_out33p0;
 	n_out33p0 = 0.0;
 	{
-		n_out33p0 = 1.0;
-		
-		if (mod(UV.x + TIME * -0.02, 0.2) < 0.02) {
-			n_out33p0 = 2.0;
-		}
-		
+		n_out33p0 = mod(UV.x + TIME * -0.02, 0.05) * 20.0;
+		n_out33p0 -= 0.5;
+		n_out33p0 *= 2.0;
+		n_out33p0 = pow(n_out33p0, 2.0) * 2.0;
+		n_out33p0 += 1.0;
 	}
 
 // Input:2
@@ -216,16 +211,11 @@ void vertex() {
 }
 
 void fragment() {
-// Color:3
-	vec3 n_out3p0 = vec3(0.000000, 0.000000, 0.000000);
-	float n_out3p1 = 1.000000;
-
 // Input:2
 	vec3 n_out2p0 = COLOR.rgb;
 
 // Output:0
-	ALBEDO = n_out3p0;
-	EMISSION = n_out2p0;
+	ALBEDO = n_out2p0;
 
 }
 
@@ -234,7 +224,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( 613.146, -411.856 )
+graph_offset = Vector2( -173.634, -129 )
 nodes/vertex/0/position = Vector2( 1440, -160 )
 nodes/vertex/2/node = SubResource( 3 )
 nodes/vertex/2/position = Vector2( -240, 120 )
@@ -263,7 +253,7 @@ nodes/vertex/16/position = Vector2( -1160, -640 )
 nodes/vertex/16/size = Vector2( 250, 150 )
 nodes/vertex/16/input_ports = ""
 nodes/vertex/16/output_ports = ""
-nodes/vertex/16/expression = "render_mode cull_disabled;"
+nodes/vertex/16/expression = "render_mode cull_disabled, unshaded;"
 nodes/vertex/20/node = SubResource( 16 )
 nodes/vertex/20/position = Vector2( 1040, -360 )
 nodes/vertex/21/node = SubResource( 17 )
@@ -301,21 +291,18 @@ nodes/vertex/29/position = Vector2( -340, -120 )
 nodes/vertex/30/node = SubResource( 26 )
 nodes/vertex/30/position = Vector2( -360, -580 )
 nodes/vertex/33/node = SubResource( 27 )
-nodes/vertex/33/position = Vector2( 700, -180 )
-nodes/vertex/33/size = Vector2( 434, 277 )
+nodes/vertex/33/position = Vector2( 620, -200 )
+nodes/vertex/33/size = Vector2( 638, 330 )
 nodes/vertex/33/input_ports = ""
 nodes/vertex/33/output_ports = "0,0,output0;"
-nodes/vertex/33/expression = "output0 = 1.0;
-
-if (mod(UV.x + TIME * -0.02, 0.2) < 0.02) {
-	output0 = 2.0;
-}
-"
+nodes/vertex/33/expression = "output0 = mod(UV.x + TIME * -0.02, 0.05) * 20.0;
+output0 -= 0.5;
+output0 *= 2.0;
+output0 = pow(output0, 2.0) * 2.0;
+output0 += 1.0;"
 nodes/vertex/34/node = SubResource( 28 )
 nodes/vertex/34/position = Vector2( 1260.15, -57.8558 )
 nodes/vertex/connections = PoolIntArray( 2, 0, 3, 0, 3, 1, 11, 0, 9, 0, 8, 0, 10, 0, 8, 1, 5, 0, 10, 0, 11, 0, 10, 1, 4, 0, 9, 1, 3, 1, 9, 0, 12, 0, 14, 0, 21, 0, 13, 0, 21, 1, 13, 1, 21, 2, 13, 2, 22, 0, 21, 0, 14, 0, 24, 0, 14, 2, 27, 0, 27, 0, 25, 0, 28, 0, 25, 1, 26, 0, 28, 0, 23, 0, 29, 0, 29, 0, 24, 1, 13, 0, 0, 0, 24, 0, 21, 2, 25, 0, 21, 1, 14, 1, 30, 0, 30, 0, 22, 0, 8, 0, 34, 1, 34, 0, 0, 6, 33, 0, 34, 0 )
 nodes/fragment/2/node = SubResource( 1 )
 nodes/fragment/2/position = Vector2( -134.55, 136.745 )
-nodes/fragment/3/node = SubResource( 2 )
-nodes/fragment/3/position = Vector2( 200, 140 )
-nodes/fragment/connections = PoolIntArray( 2, 0, 0, 5, 3, 0, 0, 0 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
