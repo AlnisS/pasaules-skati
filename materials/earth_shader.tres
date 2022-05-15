@@ -25,6 +25,7 @@ operator = 2
 
 [sub_resource type="VisualShaderNodeTexture" id=7]
 texture = ExtResource( 2 )
+texture_type = 1
 
 [sub_resource type="VisualShaderNodeTexture" id=22]
 texture = ExtResource( 4 )
@@ -80,7 +81,7 @@ render_mode specular_schlick_ggx;
 
 uniform sampler2D tex_vtx_2;
 uniform sampler2D Bathymetry;
-uniform sampler2D tex_frg_5;
+uniform sampler2D tex_frg_5 : hint_albedo;
 uniform sampler2D tex_frg_8;
 
 
@@ -179,7 +180,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -807.634, -125 )
+graph_offset = Vector2( -786.096, 2.0611 )
 nodes/vertex/0/position = Vector2( 680, 240 )
 nodes/vertex/2/node = SubResource( 2 )
 nodes/vertex/2/position = Vector2( -1020, -220 )
