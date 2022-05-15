@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://materials/earth.material" type="Material" id=1]
 [ext_resource path="res://main.gd" type="Script" id=2]
 [ext_resource path="res://camera_space_env.tres" type="Environment" id=3]
+[ext_resource path="res://materials/circulation.material" type="Material" id=4]
+[ext_resource path="res://data/deep-circulation-path.mesh" type="ArrayMesh" id=5]
 
 [sub_resource type="SphereMesh" id=1]
 material = ExtResource( 1 )
@@ -33,16 +35,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
 environment = ExtResource( 3 )
 fov = 32.0
 
-[node name="Axis" type="Spatial" parent="."]
+[node name="Earth" type="Spatial" parent="."]
 
-[node name="Earth" type="MeshInstance" parent="Axis"]
+[node name="Ground" type="MeshInstance" parent="Earth"]
 mesh = SubResource( 1 )
 skeleton = NodePath("../..")
 material/0 = null
 
-[node name="Ocean" type="MeshInstance" parent="Axis"]
+[node name="Ocean" type="MeshInstance" parent="Earth"]
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CirculationPath" type="MeshInstance" parent="Earth"]
+transform = Transform( -0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, 0.965926, 4.2222e-08, 0, 0, 0 )
+material_override = ExtResource( 4 )
+mesh = ExtResource( 5 )
 material/0 = null
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]

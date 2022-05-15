@@ -10,4 +10,3 @@ ground_horizon_color = Color( 0.42, 0.42, 0.42, 1 )
 background_mode = 3
 background_sky = SubResource( 1 )
 background_energy = 0.0
-auto_exposure_max_luma = 1.0

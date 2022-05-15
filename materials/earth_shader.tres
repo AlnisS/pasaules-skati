@@ -66,7 +66,7 @@ operator = 2
 [sub_resource type="VisualShaderNodeExpression" id=8]
 size = Vector2( 632, 297 )
 expression = "height_vis = pow(topo_data, 1.0) * 0.3;
-height_vis -= (1.0 - bath_data) * 1.0;
+height_vis -= (1.0 - bath_data) * 1.5;
 //height_vis += bath_data * 0.4 - 1.0;
 //height_vis = 0.0;"
 
@@ -110,7 +110,7 @@ void vertex() {
 	n_out8p0 = 0.0;
 	{
 		n_out8p0 = pow(dot(n_out2p0, vec3(0.333333, 0.333333, 0.333333)), 1.0) * 0.3;
-		n_out8p0 -= (1.0 - dot(n_out13p0, vec3(0.333333, 0.333333, 0.333333))) * 1.0;
+		n_out8p0 -= (1.0 - dot(n_out13p0, vec3(0.333333, 0.333333, 0.333333))) * 1.5;
 		//n_out8p0 += dot(n_out13p0, vec3(0.333333, 0.333333, 0.333333)) * 0.4 - 1.0;
 		//n_out8p0 = 0.0;
 	}
@@ -179,7 +179,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -464.55, 136.745 )
+graph_offset = Vector2( -1012.47, -105.833 )
 nodes/vertex/0/position = Vector2( 680, 240 )
 nodes/vertex/2/node = SubResource( 2 )
 nodes/vertex/2/position = Vector2( -1020, -220 )
@@ -197,7 +197,7 @@ nodes/vertex/8/size = Vector2( 632, 297 )
 nodes/vertex/8/input_ports = "0,0,topo_data;1,0,bath_data;"
 nodes/vertex/8/output_ports = "0,0,height_vis;"
 nodes/vertex/8/expression = "height_vis = pow(topo_data, 1.0) * 0.3;
-height_vis -= (1.0 - bath_data) * 1.0;
+height_vis -= (1.0 - bath_data) * 1.5;
 //height_vis += bath_data * 0.4 - 1.0;
 //height_vis = 0.0;"
 nodes/vertex/9/node = SubResource( 9 )
