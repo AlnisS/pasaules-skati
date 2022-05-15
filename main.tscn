@@ -6,8 +6,8 @@
 [ext_resource path="res://materials/circulation.material" type="Material" id=4]
 [ext_resource path="res://data/deep-circulation-path.mesh" type="ArrayMesh" id=5]
 [ext_resource path="res://fonts/TitilliumWeb-SemiBold.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://data/font_label.tres" type="DynamicFont" id=7]
-[ext_resource path="res://data/font_credits.tres" type="DynamicFont" id=8]
+[ext_resource path="res://fonts/font_label.tres" type="DynamicFont" id=7]
+[ext_resource path="res://fonts/font_credits.tres" type="DynamicFont" id=8]
 
 [sub_resource type="SphereMesh" id=1]
 material = ExtResource( 1 )
