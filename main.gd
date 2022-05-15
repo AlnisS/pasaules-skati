@@ -27,3 +27,7 @@ func _physics_process(delta):
 		$CameraBase.rotation_degrees.y -= mouse_delta.x * 0.4
 	
 	last_mouse_position = get_viewport().get_mouse_position()
+
+
+func _on_HelpButton_pressed():
+	$HelpPopup.popup()
