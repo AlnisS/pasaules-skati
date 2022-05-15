@@ -5,7 +5,7 @@ var last_mouse_position = Vector2.ZERO
 
 
 func _physics_process(delta):
-	$Axis.rotate_y(delta * 0.02)
+	$Earth.rotate_y(delta * 0.02)
 	
 	var mouse_delta = get_viewport().get_mouse_position() - last_mouse_position
 	
