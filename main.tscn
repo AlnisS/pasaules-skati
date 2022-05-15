@@ -218,10 +218,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -162.5
-margin_top = -142.5
-margin_right = 162.5
-margin_bottom = 142.5
+margin_left = -284.5
+margin_top = -181.0
+margin_right = 284.5
+margin_bottom = 181.0
 window_title = "Info"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpPopup"]
@@ -230,28 +230,37 @@ anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
+custom_fonts/normal_font = ExtResource( 8 )
 bbcode_enabled = true
 bbcode_text = "Controls: Click and drag to rotate the view.
 
-This is a visualization of deep water circulation on Earth created using the Godot game engine. Topographical, bathymetric, and light maps from NASA were merged with a deep ocean circulation map from National Geographic to produce the globe.
+This is a visualization of deep water circulation on Earth.
 
-It is inspired by a physical 3D model from the Ocean 200 class taught at UW, and created for the Spring 2022 EverybodyHacks hackathon at UW.
+Deep ocean circulation is driven by sinking water near Greenland and Antarctica during the winter, when the water is especially cold and salty causing it to be dense enough to sink. Such circulation is very slow, with water taking 1,200 years to cycle from the North Atlantic to the Pacific and back.
 
-Created by Alnis Smidchens.
+Topographic, bathymetric, and light maps from NASA are merged with a circulation map from the National Geographic Society to produce the globe.
+
+This project is inspired by a physical model from the Ocean 200 class taught at UW, and created for the Spring 2022 EverybodyHacks hackathon at UW.
+
+Created by Alnis Smidchens using the Godot game engine.
 GitHub: AlnisS/pasaules-skati
 Email: contact@alnis.dev
-Instagram/twitter/reddit: @auxiliarymoose
+Instagram/Twitter/Reddit: @auxiliarymoose
 "
 text = "Controls: Click and drag to rotate the view.
 
-This is a visualization of deep water circulation on Earth created using the Godot game engine. Topographical, bathymetric, and light maps from NASA were merged with a deep ocean circulation map from National Geographic to produce the globe.
+This is a visualization of deep water circulation on Earth.
 
-It is inspired by a physical 3D model from the Ocean 200 class taught at UW, and created for the Spring 2022 EverybodyHacks hackathon at UW.
+Deep ocean circulation is driven by sinking water near Greenland and Antarctica during the winter, when the water is especially cold and salty causing it to be dense enough to sink. Such circulation is very slow, with water taking 1,200 years to cycle from the North Atlantic to the Pacific and back.
 
-Created by Alnis Smidchens.
+Topographic, bathymetric, and light maps from NASA are merged with a circulation map from the National Geographic Society to produce the globe.
+
+This project is inspired by a physical model from the Ocean 200 class taught at UW, and created for the Spring 2022 EverybodyHacks hackathon at UW.
+
+Created by Alnis Smidchens using the Godot game engine.
 GitHub: AlnisS/pasaules-skati
 Email: contact@alnis.dev
-Instagram/twitter/reddit: @auxiliarymoose
+Instagram/Twitter/Reddit: @auxiliarymoose
 "
 scroll_active = false
 
