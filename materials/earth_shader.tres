@@ -77,7 +77,7 @@ texture = ExtResource( 3 )
 
 [resource]
 code = "shader_type spatial;
-render_mode specular_schlick_ggx;
+render_mode specular_schlick_ggx, async_visible;
 
 uniform sampler2D tex_vtx_2;
 uniform sampler2D Bathymetry;
