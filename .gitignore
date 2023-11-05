@@ -12,3 +12,6 @@ build/
 lib/
 
 android/
+
+# macOS
+*.DS_Store
